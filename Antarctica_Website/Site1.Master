@@ -1,0 +1,264 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Antarctica_Website.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   
+    <style>
+        body {
+            direction: ltr;
+            margin: 0px;
+            background-color: #17222a;
+        }
+
+        .m_table {
+            direction: ltr;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid transparent;
+        }
+
+        .header {
+            width: 100%;
+            height: 200px;
+            border: 1px solid transparent;
+            color: #dddddd;
+            font-weight: bold;
+            font-size: 22px;
+            user-select: none;
+        }
+
+            .header:visited {
+                color: #dddddd;
+            }
+
+        .headermsg {
+            width: 100%;
+            height: 200px;
+            color: #dddddd;
+            font-weight: bold;
+        }
+
+            .headermsg:visited {
+                color: #dddddd;
+            }
+
+        .tafreet {
+            height: 35px;
+            border: 1px solid transparent;
+            direction: ltr;
+        }
+
+        .nav-bar {
+            background-color: #20222a;
+            color: #e8e6e3;
+            height: 45px;
+            user-select: none;
+        }
+
+        .main {
+            width: 100%;
+            border: 1px solid transparent;
+            height: max-content;
+        }
+
+        .footer {
+            max-height: 10vh;
+            text-align: center;
+            height: 0.1%;
+            user-select: none;
+        }
+
+        .rw { /* for the shortcuts in the nav bar */
+            color: #e8e6e3;
+            font-size: 22px;
+            padding: 8px 10px 8px 10px;
+            font-weight: 700;
+            text-decoration: unset;
+            transition: .3s;
+            max-height: 45px;
+        }
+
+            .rw:hover {
+                background-color: #000000;
+            }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        .button2 {
+            background-color: transparent;
+            color: #c4c19d;
+            border: 2px solid #008CBA;
+            cursor: pointer;
+            font-family: Bahnschrift;
+            font-size: 28px;
+            margin: 0.5%;
+            border-radius: 5px;
+            margin-bottom: 2%;
+            transition: 0.2s;
+        }
+
+            .button2:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+
+        .button_logout {
+            background-color: transparent;
+            color: red;
+            border: 2px solid red;
+            cursor: pointer;
+            font-family: Bahnschrift;
+            font-size: 28px;
+            margin: 0.5%;
+            border-radius: 5px;
+            margin-bottom: 2%;
+            transition: 0.2s;
+        }
+
+            .button_logout:hover {
+                background-color: red;
+                color: white;
+            }
+
+        .textbox {
+            background-color: transparent;
+            border-radius: 10px;
+            border: 1px #3f4547 solid;
+            color: #dddddd;
+            height: 2em;
+            font-family:Bahnschrift;
+            padding-left:3px;
+        }
+
+            .textbox:disabled {
+                color: dimgray;
+            }
+
+            .textbox:hover {
+                border: 1px #3f4547 solid;
+            }
+
+            .textbox:focus {
+                outline: none !important;
+            }
+
+
+        .textboxnew {
+            background-color: transparent;
+            border: transparent;
+            border-bottom: 3px #3f4547 solid;
+            color: #dddddd;
+            height: 2em;
+            font-family: Bahnschrift;
+            width: 280px;
+            margin-bottom: 10px;
+        }
+
+            .textboxnew:hover {
+            }
+
+            .textboxnew:focus {
+                outline: none !important;
+            }
+
+        .check {
+            background-color: transparent;
+            border: 1px #3f4547 solid;
+            color: aquamarine;
+        }
+    </style>
+    <!-- Clock -->
+    <script type="text/javascript">
+        setInterval(updateTime, 10);
+
+        function updateTime() {
+            var now = new Date();
+            var timeString = now.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById("myTime").innerHTML = timeString;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <table class="m_table" cellspacing="0">
+        <!--header-->
+        <tr style="height: min-content;">
+            <td colspan="2" class="header" style="width: min-content; height: min-content; font-weight: bold; border-right: transparent;">
+
+                <img style="margin-left: unset; margin-right: unset; width: unset; border: unset; border-width: unset; border: unset; height: 100px; aspect-ratio: initial; vertical-align: top;"
+                    src="Media/Pictures/wide2.png" /></td>
+
+            <td colspan="2" class="header" style="direction: rtl; border-left: transparent; height: min-content; text-align: right;">
+
+                <span style="vertical-align: top;">
+                    <%= loginMsg %>
+                
+                </span>
+            </td>
+        </tr>
+
+        <!--tafrit rashe-->
+        <tr class="nav-bar">
+            <td style="height: unset; width: 10px; border-right: transparent;">
+                <span id="myTime" style="color: #31485b; width: min-content;"></span>
+            </td>
+            <td colspan="3" style="text-align: center; border-left: transparent;">
+
+
+                <div style="display: block; justify-content: center; margin-left: -55px;">
+                    <a class="rw" href="Homepage.aspx">Home</a><a class="rw" href="Geography.aspx">Geography</a><a class="rw" href="PolarBear.aspx">Polar Bear</a><a class="rw" href="ArcticFox.aspx">Arctic Fox</a><a class="rw" href="Penguin.aspx">Penguins</a><a class="rw" href="Research.aspx">Research</a><%=add%>
+                    <span style="float: right; margin-top: 0.5%; margin-right: 5px; color: #c4c19d; font-family: Bahnschrift; user-select: text;">
+                        <%= uNameMsg %>
+                    </span>
+
+                </div>
+            </td>
+
+
+
+        </tr>
+
+        <!--main-->
+        <tr>
+            <td class="main" colspan="3">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </td>
+        </tr>
+
+        <!--footer-->
+        <tr>
+            <td class="footer" colspan="3">
+                <marquee scrollamount="20" behavior="alternate">
+                    <h3 style="text-align: left; color: #dddddd;">Jatt High School. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        By: Mohammed Badran
+                        
+                    </h3>
+
+                </marquee>
+                <!--
+                <h3 style="float:right; font-family:'Lucida Calligraphy'; font-weight:unset; margin-right:1%;">By: Mohammed Badran</h3>
+                <h3 style="color: #dddddd; padding-left:17.5%" >Jatt High School.  </h3>
+                    -->
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>
