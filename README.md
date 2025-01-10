@@ -121,19 +121,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## ✍️ Author
 
 **Mohammed Badran**  
-Jatt High School
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
 
-Special thanks to:
-- Emil Al-Aru (Teacher)
-- Family and friends for their support
-- Antarctic research community for inspiration
-
----
 
 <p align="center">Made with ❤️ by Mohammed Badran</p>
