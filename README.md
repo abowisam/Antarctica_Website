@@ -118,9 +118,7 @@ Password: admin
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## ✍️ Author
 
-**Mohammed Badran**  
 
 ## 📄 License
 
